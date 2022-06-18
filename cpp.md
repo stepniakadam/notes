@@ -34,3 +34,9 @@ There will be two external linkage *names* and as a result the relocatable objec
 0000000000000000 B var1
 0000000000000000 T _Z7executev
 ```
+
+## What DWARF section contains in ELF files?
+
+
+
+
