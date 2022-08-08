@@ -1,5 +1,26 @@
 # redhat_exams
 Materials used for RedHat exams preparation
 
-### What is MBR partition?
-MBR - Master Boot Record is a schame that partitions and data is organized. It consist of spece at the beginning of the drive that contains the information about how the paritions are ogranized. It contains a table that locates each partition on the storage media or hard disk drive. 
+### What is the difference between MBR and GPT parition schames?
+
+They are both parition schames - describe how the data is organized. But they differ in it's properties:
+
+### MBR
+- Has maximum number of 4 paritions
+- Maximum size of partion is 2TB
+
+### GPT
+- Hax maximum number of 128 paritions
+- Maximum size of partion is 18 exabytes
+- Good support of multiple boot
+- Easy parition recovery
+
+### Useful commands:
+
+```
+df - report file system disk space usage
+```
+
+```
+blkid - locate/print block device attributes
+```
