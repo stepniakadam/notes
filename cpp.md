@@ -38,5 +38,14 @@ There will be two external linkage *names* and as a result the relocatable objec
 ## What DWARF section contains in ELF files?
 
 
+## When return value optimization is guaranteed by standard?
+
+"In the initialization of an object, when the source object is a nameless temporary and is of the same class type (ignoring cv-qualification) as the target object. When the nameless temporary is the operand of a return statement, this variant of copy elision is known as RVO, "return value optimization"." 
+     
+```
+int execute() {
+    return {};  // Guaranteed
+}
+```
 
 
