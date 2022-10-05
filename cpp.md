@@ -35,6 +35,22 @@ There will be two external linkage *names* and as a result the relocatable objec
 0000000000000000 T _Z7executev
 ```
 
+## What problems C++20 modules aim to solve?
+
+C++ creates challanges to developers when codbase grows:
+* Compilation slows down when code is not structured properly
+* Unnecessary complation, release and testing as a result of inproper dependency management
+* Violation of ODR may happen resulting with hard-to-detect problems
+* Static Initialization Fiasco (not entirely depended on codbase size)
+
+
+
+* Developer should know compilation phases
+* Developer should know linkage types (internal, external)
+* Developer should know how proper way structuring their code into *.cpp and *.hpp files
+
+
+
 ## What DWARF section contains in ELF files?
 
 
