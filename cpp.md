@@ -43,12 +43,26 @@ C++ creates challanges to developers when codbase grows:
 * Violation of ODR may happen resulting with hard-to-detect problems
 * Static Initialization Fiasco (not entirely depended on codbase size)
 
-
-
+As a result:
 * Developer should know compilation phases
 * Developer should know linkage types (internal, external)
 * Developer should know how proper way structuring their code into *.cpp and *.hpp files
 
+## What developer should know about compilation phases?
+
+Maintaining consistent and well organized physical code structure was challanging until C++20 module come to save our souls. Back days it was necessary for developer to know basic compilation and linking phases in order to mimic 'modules'. Determining how frequently used headers are 'polluted' by unncessary inclusions was the only way of fighting for quick workflow. 
+
+Let's assume we are assigned to develop small library consumed by many components of our system. It other words it will be included in many cpp files by other developers. Company will use the library internally, but developer and user will never consult each other about their needs. Some may think that it's against the common sense but this case covers also legacy libraries, large-scale organizations, lack of communication, needs are not clear, etc. 
+
+
+
+It will be provided for other teams by package of a :
+
+```
+class 
+```
+
+Without knowing what compiler does for us. There were attempts of  code metrics helping developers to determine how far they are from 
 
 
 ## What DWARF section contains in ELF files?
