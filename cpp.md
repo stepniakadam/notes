@@ -54,7 +54,7 @@ Maintaining consistent and well organized physical code structure was challangin
 
 Let's assume we are assigned to develop small library consumed by many components of the system. It other words it will be included by many cpp files. In such case it is essential to undestand compilation phases to know the impact of our decisions for rest of the system. 
 
-Library will store and get from database containing company staff entries. Implementation assumes that call to 'add' will not store data to database immediately but will be pooled by an other object periodically for performance reasons. 
+Library will store and get from database containing company staff entries. Implementation assumes that call to 'add' will not store data to database immediately but will be pooled by an other object periodically for performance reasons. Quick, naive implementation may look like this:
 
 ```
 #include <string>
@@ -62,7 +62,7 @@ Library will store and get from database containing company staff entries. Imple
 
 class Workers {
 public:
-Workers(WorkersDBConnection connection);
+Workers(WorkersDBConnection* connection);
 
 void add(const std::string& name);
 void remove(const std::string& name);
@@ -73,8 +73,11 @@ private:
 };
 ```
 
+Class WorkerDBConnection was already in the sytem so we have to only implement basic 'add' and 'remove' functions. We did great job, didn't we?
+Let's dive in a little bit and see what compiler does of us:
 
-
+1) Preprocessing - All preprocessor directives are executed by textuall substitution.
+ 
 ## What DWARF section contains in ELF files?
 
 
