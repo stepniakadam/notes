@@ -77,6 +77,27 @@ Class WorkerDBConnection was already in the sytem so we have to only implement b
 Let's dive in a little bit and see what compiler does of us:
 
 1) Preprocessing - All preprocessor directives are executed by textuall substitution.
+
+If compiled with `-E` flag gcc stops compilation after preprocessing phase:
+
+```
+gcc -E workers.cpp | head -n 300 | tail -n 20
+```
+
+outputs:
+
+```
+...
+    struct __is_void<void>
+    {
+      enum { __value = 1 };
+      typedef __true_type __type;
+    };
+
+...
+```
+
+
  
 ## What DWARF section contains in ELF files?
 
