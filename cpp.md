@@ -87,16 +87,39 @@ gcc -E workers.cpp | head -n 300 | tail -n 20
 outputs:
 
 ```
-...
+(...)
     struct __is_void<void>
     {
       enum { __value = 1 };
       typedef __true_type __type;
     };
 
-...
+(...)
 ```
 
+Head and tail commands were used to limit output to couple of lines. As we can see at the top of the file there is copy pasted definition of an struct of standard template library. Each included header was literally copy-pasted into the translation unit (cpp file). But how many lines were added into what's alredy in cpp?
+
+```
+cat workers.cpp | wc
+```
+
+outputs:
+```
+     15      23     211
+```
+
+There are 15 lines of worker.cpp file before preprocessor starts. But what happens after first phase of compilation?
+
+```
+gcc -E workers.cpp | wc
+```
+
+outputs:
+```
+  36217   78064  892068
+```
+
+There are 36217 lines after preprocessing phase! That is huge difference! 
 
  
 ## What DWARF section contains in ELF files?
