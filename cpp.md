@@ -119,7 +119,11 @@ outputs:
   36217   78064  892068
 ```
 
-There are 36217 lines after preprocessing phase! That is huge difference! 
+There are 36217 lines after preprocessing phase! That is huge difference! This have significate impact on compilation time and we will dive deeper into that later in this article. 
+
+2) Compilation
+
+At this phase .cpp file including copy-pasted code from all header files (remember - this was 36217 lines of code) is used to produce binary object file. Not all symbols are defined at this point - it is allowed (and usually best practice) to only declare a symbol in *.hpp file. Compiler however will process all lines that were provided  
 
  
 ## What DWARF section contains in ELF files?
