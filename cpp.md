@@ -123,9 +123,7 @@ There are 36217 lines after preprocessing phase! That is huge difference! This h
 
 2) Compilation
 
-At this phase .cpp file including copy-pasted code from all header files (remember - this was 36217 lines of code) is used to produce binary object file. Not all symbols are defined at this point - it is allowed (and usually best practice) to only declare a symbol in *.hpp file. Compiler however will process all lines that were provided in order determine symbols that will be part of resulting object file. 
-
-For example:
+At this phase .cpp file including copy-pasted code from all header files (remember - this was 36217 lines of code) is used to produce binary object file. Not all symbols are defined at this point - it is allowed (and usually best practice) to only declare a symbol in *.hpp file. Compiler however will process all lines in order to determine what's needed to produce the object. 
 
 
 
